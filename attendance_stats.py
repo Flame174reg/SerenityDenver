@@ -8,8 +8,8 @@ import discord
 from discord import app_commands, ui
 from discord.ext import commands, tasks
 
-GUILD_ID = 1334888994496053282
-HIGH_STAFF_ROLE_ID = 1345130001338601563
+GUILD_ID = 1495254978418446376
+HIGH_STAFF_ROLE_ID = 1495255260321677462
 MSK = timezone(timedelta(hours=3))
 logger = logging.getLogger(__name__)
 

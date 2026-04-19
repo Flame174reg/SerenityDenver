@@ -9,8 +9,8 @@ import discord
 from discord import app_commands
 from discord.ext import commands, tasks
 
-TEMP_VOICE_TRIGGER_CHANNEL_ID = 1459556025630855251  # ID триггер-канала
-TEMP_VOICE_CATEGORY_ID = 1334889740343705683  # ID категории для временных каналов (0 = без категории)
+TEMP_VOICE_TRIGGER_CHANNEL_ID = 1495255848765624414  # ID триггер-канала
+TEMP_VOICE_CATEGORY_ID = 1495255396900798504  # ID категории для временных каналов (0 = без категории)
 
 
 def _get_env_int(name: str, default: int) -> int:
@@ -25,11 +25,11 @@ def _get_env_int(name: str, default: int) -> int:
 
 TEMP_VOICE_ALLOWED_ROLE_ID = _get_env_int(
     "TEMP_VOICE_ALLOWED_ROLE_ID",
-    1334890846226485388,
+    1495255224158519409,
 )  # Allowed role for default temp voice access
 TEMP_VOICE_DEFAULT_NAME = "{user}'s channel"
 TEMP_VOICE_DEFAULT_LIMIT: Optional[int] = None  # например 5, или None для без лимита
-TEMP_VOICE_GUILD_ID = 1334888994496053282  # ID сервера (0 = без ограничения)
+TEMP_VOICE_GUILD_ID = 1495254978418446376  # ID сервера (0 = без ограничения)
 
 logger = logging.getLogger("temp_voice")
 
@@ -430,7 +430,7 @@ class TempVoicePanelView(discord.ui.View):
         label=" ",
         style=discord.ButtonStyle.secondary,
         custom_id="tempvoice-lock",
-        emoji=discord.PartialEmoji.from_str("<:lock:1463210853967991005>"),
+        emoji="🔒",
         row=0,
     )
     async def lock_button(self, interaction: discord.Interaction, _: discord.ui.Button):
@@ -450,7 +450,7 @@ class TempVoicePanelView(discord.ui.View):
         label=" ",
         style=discord.ButtonStyle.secondary,
         custom_id="tempvoice-hide",
-        emoji=discord.PartialEmoji.from_str("<:glaza:1463210765824688362>"),
+        emoji="👁️",
         row=0,
     )
     async def hide_button(self, interaction: discord.Interaction, _: discord.ui.Button):
@@ -470,7 +470,7 @@ class TempVoicePanelView(discord.ui.View):
         label=" ",
         style=discord.ButtonStyle.secondary,
         custom_id="tempvoice-limit",
-        emoji=discord.PartialEmoji.from_str("<:limit:1462501036681072640>"),
+        emoji="👥",
         row=0,
     )
     async def limit_button(self, interaction: discord.Interaction, _: discord.ui.Button):
@@ -484,7 +484,7 @@ class TempVoicePanelView(discord.ui.View):
         label=" ",
         style=discord.ButtonStyle.secondary,
         custom_id="tempvoice-rename",
-        emoji=discord.PartialEmoji.from_str("<:redact:1460339058549981214>"),
+        emoji="✏️",
         row=0,
     )
     async def rename_button(self, interaction: discord.Interaction, _: discord.ui.Button):
@@ -498,7 +498,7 @@ class TempVoicePanelView(discord.ui.View):
         label=" ",
         style=discord.ButtonStyle.secondary,
         custom_id="tempvoice-transfer",
-        emoji=discord.PartialEmoji.from_str("<:korona:1460339053961543822>"),
+        emoji="👑",
         row=1,
     )
     async def transfer_button(self, interaction: discord.Interaction, _: discord.ui.Button):
@@ -512,7 +512,7 @@ class TempVoicePanelView(discord.ui.View):
         label=" ",
         style=discord.ButtonStyle.secondary,
         custom_id="tempvoice-allow",
-        emoji=discord.PartialEmoji.from_str("<:adduser:1460339050115502206>"),
+        emoji="➕",
         row=1,
     )
     async def allow_button(self, interaction: discord.Interaction, _: discord.ui.Button):
@@ -526,7 +526,7 @@ class TempVoicePanelView(discord.ui.View):
         label=" ",
         style=discord.ButtonStyle.secondary,
         custom_id="tempvoice-block",
-        emoji=discord.PartialEmoji.from_str("<:zapret:1460339060110266418>"),
+        emoji="⛔",
         row=1,
     )
     async def block_button(self, interaction: discord.Interaction, _: discord.ui.Button):
@@ -741,17 +741,17 @@ class TempVoice(commands.Cog):
             title="Панель управление приватными комнатами",
             description=(
                 "Как использовать?\n"
-                "1. Зайдите в <#1459556025630855251> для создания временного канала.\n"
+                "1. Зайдите в <#1495255848765624414> для создания временного канала.\n"
                 "2. Используйте кнопки ниже для управления вашим каналом.\n\n"
                 "<a:loading:1452422282797387806> Настройки канала:\n\n"
-                "<:redact:1460339058549981214> - Изменить название канала\n"
-                "<:limit:1462501036681072640> - Установить максимальный лимит участников (0 = без лимита)\n"
-                "<:lock:1463210853967991005> - Закрыть или открыть доступ для всех\n"
-                "<:glaza:1463210765824688362> - Сделать канал скрытым или открытым для всех\n\n"
+                "✏️ - Изменить название канала\n"
+                "👥 - Установить максимальный лимит участников (0 = без лимита)\n"
+                "🔒 - Закрыть или открыть доступ для всех\n"
+                "👁️ - Сделать канал скрытым или открытым для всех\n\n"
                 "👥 Управление участниками:\n\n"
-                "<:adduser:1460339050115502206> - Разрешить доступ конкретному пользователю\n"
-                "<:zapret:1460339060110266418> - Запретить доступ конкретному пользователю\n"
-                "<:korona:1460339053961543822> - Передать права владельца другому участнику\n\n"
+                "➕ - Разрешить доступ конкретному пользователю\n"
+                "⛔ - Запретить доступ конкретному пользователю\n"
+                "👑 - Передать права владельца другому участнику\n\n"
                 "<a:cloud:1453169995172282418> **Канал автоматически удалится через 30 секунд после того, как все участники покинут его**"
             ),
             color=discord.Color.from_rgb(255, 255, 255),

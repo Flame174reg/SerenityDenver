@@ -3,8 +3,8 @@ from discord.ext import commands
 import asyncio
 from discord import app_commands
 
-GUILD_ID = 1334888994496053282
-ALLOWED_ROLES = [1345130001338601563, 1370868838240878592]
+GUILD_ID = 1495254978418446376
+ALLOWED_ROLES = [1495255260321677462, 1495255288838881352]
 
 class EmbedModal(discord.ui.Modal, title="Создание эмбеда"):
     def __init__(self):
@@ -12,7 +12,7 @@ class EmbedModal(discord.ui.Modal, title="Создание эмбеда"):
 
         self.content_input = discord.ui.TextInput(
             label="Тэги и оглавление (над эмбедом)",
-            placeholder="Тэги вводить в формате <@&ID-роли>. Как пример: ## Сбор <@&1334890846226485388>! ",
+            placeholder="Тэги вводить в формате <@&ID-роли>. Как пример: ## Сбор <@&1495255224158519409>! ",
             style=discord.TextStyle.long,
             max_length=500,
             required=False

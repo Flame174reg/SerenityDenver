@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord import app_commands
 
 # ID твоего сервера для регистрации slash-команд
-GUILD_ID = 1334888994496053282  # <-- Замени на свой
+GUILD_ID = 1495254978418446376  # <-- Замени на свой
 
 # Временное хранилище заявок
 user_applications = {}
@@ -67,7 +67,7 @@ class Page3Modal(discord.ui.Modal, title="Заявка - Страница 3"):
         embed.set_footer(text=f"Отправитель: {interaction.user}")
 
         # Канал для заявок: замени на свой
-        log_channel = interaction.guild.get_channel(1342034595830435850)
+        log_channel = interaction.guild.get_channel(1495255497442459949)
         if log_channel:
             await log_channel.send(embed=embed)
 

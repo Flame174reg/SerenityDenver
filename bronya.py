@@ -3,8 +3,8 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-ROLE_ID = 1345130001338601563
-GUILD_ID = 1334888994496053282
+ROLE_ID = 1495255260321677462
+GUILD_ID = 1495254978418446376
 CHANNEL_ID = 1370884710993236109
 
 EMBED_TITLE = "Запись участников"

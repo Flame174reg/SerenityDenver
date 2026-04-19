@@ -29,8 +29,8 @@ class PromoModal(Modal, title="Данные персонажа"):
     )
 
     async def on_submit(self, interaction: discord.Interaction):
-        target_channel_id = 1366903125671153694
-        mention_role_id = 1345130001338601563  # ID роли для упоминания
+        target_channel_id = 1495255508368490506
+        mention_role_id = 1495255260321677462  # ID роли для упоминания
         channel = interaction.client.get_channel(target_channel_id)
 
         embed = discord.Embed(
@@ -81,7 +81,7 @@ class PromoCommand(commands.Cog):
             json.dump({'message_id': message_id}, file)
 
     async def send_embed_with_button(self, ctx):
-        role_id = 1345130001338601563
+        role_id = 1495255260321677462
         support_role_id = 1366915536818274406
         if discord.utils.get(ctx.author.roles, id=role_id):
             embed = discord.Embed(
@@ -100,7 +100,7 @@ class PromoCommand(commands.Cog):
             embed.set_image(url="https://i.imgur.com/46TDn4m.png")
             embed.set_footer(text="Регистрируйтесь и присоединяйтесь — мы ждём вас на Seattle!")
 
-            channel = self.bot.get_channel(1366898908411990026)
+            channel = self.bot.get_channel(1495255508368490506)
             if channel:
                 if self.cached_message_id:
                     try:

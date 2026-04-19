@@ -4,7 +4,7 @@ from discord import app_commands
 from discord.ext import commands
 
 
-GUILD_ID = 1334888994496053282
+GUILD_ID = 1495254978418446376
 
 
 class RoleParser(commands.Cog):

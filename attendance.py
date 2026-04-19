@@ -6,8 +6,8 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 # === НАСТРОЙКИ ===
-GUILD_ID = 1334888994496053282              # твой сервер
-ROLE_ID = 1345130001338601563               # кто может ставить явку
+GUILD_ID = 1495254978418446376              # твой сервер
+ROLE_ID = 1495255260321677462               # кто может ставить явку
 JSON_PATH = "serenitypay.json"              # тот же json, что и в report.py
 SPREADSHEET_ID = "1_i4UugHEAw6qRJekBqlGT8xEWEaxzFJ7ZQUomO2u-kk"
 
@@ -19,15 +19,15 @@ NICKNAME_COLUMN_NAME = "Nickname"
 ID_NUM_COLUMN_NAME = "ID"
 RANK_COLUMN_NAME = "Ранг"
 
-LOG_CHANNEL_ID = 1446381567609143387        # канал логов явки
+LOG_CHANNEL_ID = 1495255715491745822        # канал логов явки
 
 # маппинг: ID роли -> числовой ранг из таблицы
 ROLE_RANK_MAP = {
-    1334890705490935808: 2,
-    1355060255360552960: 3,
-    1334890559835476051: 4,
-    1334890630970871860: 5,
-    1335263029264384032: 6,
+    1495255211957027017: 2,
+    1495255266369998959: 3,
+    1495255199059804180: 4,
+    1495255205711843478: 5,
+    1495255230164762704: 6,
 }
 
 

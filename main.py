@@ -6,11 +6,11 @@ import contextlib
 from discord.ui import Button, View, TextInput, Modal
 
 TOKEN = os.getenv("TOKEN")
-APPLICATION_CHANNEL_ID = 1342034595830435850
-SUBMIT_CHANNEL_ID = 1357057778551619824
-ROLE_IDS = [1334890846226485388, 1334890792040267776]
-GUILD_ID = 1334888994496053282
-ACCEPT_CHANNEL_ID = 1334889794857206002
+APPLICATION_CHANNEL_ID = 1495255497442459949
+SUBMIT_CHANNEL_ID = 1495255487061426286
+ROLE_IDS = [1495255260321677462, 1495255288838881352]
+GUILD_ID = 1495254978418446376
+ACCEPT_CHANNEL_ID = 1495255497442459949
 
 intents = discord.Intents.default()
 intents.members = True
@@ -320,7 +320,7 @@ class ApplicationModal(discord.ui.Modal, title="Подача заявки в Ser
         channel = bot.get_channel(APPLICATION_CHANNEL_ID)
         if channel:
             await channel.send(
-                content=f"<@&1345130001338601563> <@&1370868838240878592>",
+                content=f"<@&1495255260321677462> <@&1495255288838881352>",
                 embed=embed,
                 view=view
             )
@@ -403,7 +403,7 @@ async def on_interaction(interaction: discord.Interaction):
                 await member.send(
                     "Вы приняты! Как будет время и возможность, "
                     "свяжитесь с High Staff семьи или перейдите в канал "
-                    "<#1334889794857206002> прямо сейчас."
+                    "<#1495255497442459949> прямо сейчас."
                 )
             except:
                 pass

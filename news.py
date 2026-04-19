@@ -11,9 +11,9 @@ from zoneinfo import ZoneInfo
 
 from contracts import ContractOpenView, MAX_ACTIVE_SLOTS
 
-ROLE_ID = 1345130001338601563
-CHANNEL_ID = 1336272791598792735  # Канал для публикации
-GUILD_ID = 1334888994496053282     # Твой сервер
+ROLE_ID = 1495255260321677462
+CHANNEL_ID = 1495255529293877248  # Канал для публикации
+GUILD_ID = 1495254978418446376     # Твой сервер
 MOSCOW_TZ = ZoneInfo("Europe/Moscow")
 REMINDER_TEXT = "<a:loading:1449942447101579396>Через 10 минут сбор на семейном доме на контракты! Не забудь!"
 
@@ -270,13 +270,13 @@ class News(commands.Cog):
 
         if image_file is not None:
             msg = await channel.send(
-                content="## Сбор <@&1334890846226485388>!",
+                content="## Сбор <@&1495255224158519409>!",
                 embed=embed,
                 file=image_file,
             )
         else:
             msg = await channel.send(
-                content="## Сбор <@&1334890846226485388>!",
+                content="## Сбор <@&1495255224158519409>!",
                 embed=embed,
             )
 

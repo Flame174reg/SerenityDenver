@@ -1,4 +1,4 @@
-﻿import asyncio
+import asyncio
 import contextlib
 from typing import Literal
 
@@ -8,9 +8,9 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-GUILD_ID = 1334888994496053282
-ALLOWED_ROLE_IDS = [1345130001338601563]
-DEFAULT_CATALOG_CHANNEL_ID = 1336293604553003079
+GUILD_ID = 1495254978418446376
+ALLOWED_ROLE_IDS = [1495255260321677462]
+DEFAULT_CATALOG_CHANNEL_ID = 1495255602149195796
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 FAMILY = "family"

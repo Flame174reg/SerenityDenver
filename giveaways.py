@@ -17,8 +17,8 @@ from discord import app_commands
 from discord.ext import commands, tasks
 
 # === НАСТРОЙКИ ===
-GUILD_ID = 1334888994496053282
-ROLE_TAG_ID = 1334890846226485388  # тэгнем эту роль над эмбедой
+GUILD_ID = 1495254978418446376
+ROLE_TAG_ID = 1495255224158519409  # тэгнем эту роль над эмбедой
 
 # Postgres (public.give, public.guild_settings)
 DATABASE_URL = os.getenv("DATABASE_URL")

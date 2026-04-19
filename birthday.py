@@ -5,8 +5,8 @@ import datetime
 import random
 import re
 
-GUILD_ID = 1334888994496053282
-BIRTHDAY_CHANNEL_ID = 1350539298637873162
+GUILD_ID = 1495254978418446376
+BIRTHDAY_CHANNEL_ID = 1495255569856991352
 birthday_data = {}  # user_id: {"date": "12.07", "wish": "..."}
 congrated_today = set()
 
